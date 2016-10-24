@@ -42,7 +42,7 @@ public class InitActivity extends AppCompatActivity {
             requestPermission(new String[]{Manifest.permission.CAMERA, Manifest.permission.VIBRATE},
                     REQUEST_STORAGE_READ_ACCESS_PERMISSION);
         } else {
-            Intent intent = new Intent(this, MainActivity.class);
+            Intent intent = new Intent(this, QrCodeScanActivity.class);
             startActivity(intent);
             this.finish();
         }

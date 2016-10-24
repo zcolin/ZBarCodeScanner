@@ -53,7 +53,7 @@ import cn.hugo.android.scanner.decode.CaptureActivityHandler;
  * thread. It draws a viewfinder to help the user place the barcode correctly,
  * shows feedback as the image processing is happening, and then overlays the
  * results when a scan is successful.
- * <p/>
+ * <p>
  * 1.此view只能放置到Activity中
  * 2.开启camera，在后台独立线程中完成扫描任务；
  * 3.绘制了一个扫描区（viewfinder）来帮助用户将条码置于其中以准确扫描； 3.扫描成功后会将扫描结果展示在界面上。
@@ -385,9 +385,7 @@ public class BaseQrCodeScannerView extends RelativeLayout implements SurfaceHold
                  .show();
         } else {
             //String resultStr = ResultParser.parseResult(rawResult).toString();
-            if (onScanResultListener != null && onScanResultListener.scanResult(result)) {
-                activity.finish();
-            } else {
+            if (onScanResultListener != null && !onScanResultListener.scanResult(result)) {
                 // 重新进行扫描
                 restartPreviewAfterDelay(0L);
                 Toast.makeText(activity, "二维码数据错误，请重新扫描！", Toast.LENGTH_SHORT)

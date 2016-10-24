@@ -7,7 +7,7 @@ import android.widget.Toast;
 
 import cn.hugo.android.scanner.view.BaseQrCodeScannerView;
 
-public class MainActivity extends AppCompatActivity {
+public class QrCodeScanActivity extends AppCompatActivity {
 
     private BaseQrCodeScannerView view;
 
@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         view.setOnScanResultListener(new BaseQrCodeScannerView.OnScanResultListener() {
             @Override
             public boolean scanResult(String result) {
-                Toast.makeText(MainActivity.this, result, Toast.LENGTH_LONG)
+                Toast.makeText(QrCodeScanActivity.this, result, Toast.LENGTH_LONG)
                      .show();
                 return false;//true则结束页面，false则不结束
             }
