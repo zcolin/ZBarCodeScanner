@@ -19,7 +19,7 @@
         android:id="@+id/capture_top_ll"
         android:layout_width="fill_parent"
         android:layout_height="85.0dip"
-        android:background="@color/capture_text_cover_bg"
+        android:background="@color/scan_capture_text_cover_bg"
         android:orientation="horizontal"
         android:weightSum="5.0" >
 
@@ -48,7 +48,7 @@
             android:layout_weight="3.0"
             android:gravity="center"
             android:paddingLeft="20.0dip"
-            android:text="@string/top_hint"
+            android:text="@string/scan_top_hint"
             android:textColor="#ffffffff"
             android:textSize="13.0sp" />
 

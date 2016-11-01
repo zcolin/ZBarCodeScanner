@@ -16,16 +16,13 @@
 
 package cn.hugo.android.scanner.decode;
 
-import java.io.ByteArrayOutputStream;
-import java.util.Map;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.util.Log;
-import cn.hugo.android.scanner.CaptureActivityBase;
-import cn.hugo.android.scanner.R;
+
 import com.google.zxing.BinaryBitmap;
 import com.google.zxing.DecodeHintType;
 import com.google.zxing.MultiFormatReader;
@@ -33,6 +30,12 @@ import com.google.zxing.PlanarYUVLuminanceSource;
 import com.google.zxing.ReaderException;
 import com.google.zxing.Result;
 import com.google.zxing.common.HybridBinarizer;
+
+import java.io.ByteArrayOutputStream;
+import java.util.Map;
+
+import cn.hugo.android.scanner.CaptureActivityBase;
+import cn.hugo.android.scanner.R;
 
 final class DecodeHandler extends Handler {
 
@@ -55,10 +58,10 @@ final class DecodeHandler extends Handler {
 		if (!running) {
 			return;
 		}
-		if (message.what == R.id.decode)
+		if (message.what == R.id.scan_decode)
 		{
 			decode((byte[]) message.obj, message.arg1, message.arg2);
-		} else if (message.what == R.id.quit)
+		} else if (message.what == R.id.scan_quit)
 		{
 			running = false;
 			Looper.myLooper().quit();
@@ -113,7 +116,7 @@ final class DecodeHandler extends Handler {
 			Log.d(TAG, "Found barcode in " + (end - start) + " ms");
 			if (handler != null) {
 				Message message = Message.obtain(handler,
-						R.id.decode_succeeded, rawResult);
+						R.id.scan_decode_succeeded, rawResult);
 				Bundle bundle = new Bundle();
 				bundleThumbnail(source, bundle);
 				message.setData(bundle);
@@ -122,7 +125,7 @@ final class DecodeHandler extends Handler {
 		}
 		else {
 			if (handler != null) {
-				Message message = Message.obtain(handler, R.id.decode_failed);
+				Message message = Message.obtain(handler, R.id.scan_decode_failed);
 				message.sendToTarget();
 			}
 		}

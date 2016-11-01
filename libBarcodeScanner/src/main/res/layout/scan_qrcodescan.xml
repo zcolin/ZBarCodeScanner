@@ -24,7 +24,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_margin="50dp"
-        android:background="@color/contents_text"
+        android:background="@color/scan_contents_text"
         android:gravity="center"
         android:text="请将二维码置于取景框内扫描"
         android:textColor="#ffffffff"

@@ -106,9 +106,9 @@ public final class ViewfinderView extends View {
 
 		Resources resources = getResources();
 		maskColor = Color.parseColor("#88000000"); // 遮掩层颜色
-		resultColor = resources.getColor(R.color.result_view);
+		resultColor = resources.getColor(R.color.scan_result_view);
 
-		resultPointColor = resources.getColor(R.color.possible_result_points);
+		resultPointColor = resources.getColor(R.color.scan_possible_result_points);
 		possibleResultPoints = new ArrayList<ResultPoint>(5);
 		lastPossibleResultPoints = null;
 

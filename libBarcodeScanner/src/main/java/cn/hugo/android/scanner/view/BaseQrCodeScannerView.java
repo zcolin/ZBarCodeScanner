@@ -295,7 +295,7 @@ public class BaseQrCodeScannerView extends RelativeLayout implements SurfaceHold
 
     public void restartPreviewAfterDelay(long delayMS) {
         if (handler != null) {
-            handler.sendEmptyMessageDelayed(R.id.restart_preview, delayMS);
+            handler.sendEmptyMessageDelayed(R.id.scan_restart_preview, delayMS);
         }
         resetStatusView();
     }
@@ -360,7 +360,7 @@ public class BaseQrCodeScannerView extends RelativeLayout implements SurfaceHold
                 savedResultToShow = result;
             }
             if (savedResultToShow != null) {
-                Message message = Message.obtain(handler, R.id.decode_succeeded, savedResultToShow);
+                Message message = Message.obtain(handler, R.id.scan_decode_succeeded, savedResultToShow);
                 handler.sendMessage(message);
             }
             savedResultToShow = null;
@@ -369,9 +369,9 @@ public class BaseQrCodeScannerView extends RelativeLayout implements SurfaceHold
 
     private void displayFrameworkBugMessageAndExit() {
         AlertDialog.Builder builder = new AlertDialog.Builder(activity);
-        builder.setTitle(activity.getString(R.string.app_name));
-        builder.setMessage(activity.getString(R.string.msg_camera_framework_bug));
-        builder.setPositiveButton(R.string.button_ok, new FinishListener(activity));
+        builder.setTitle("二维码扫描");
+        builder.setMessage("抱歉,Android相机出现问题,您可能需要重启设备.");
+        builder.setPositiveButton("确定", new FinishListener(activity));
         builder.setOnCancelListener(new FinishListener(activity));
         builder.show();
     }
