@@ -7,7 +7,7 @@
 app的build.gradle中添加
 ```
 dependencies {
-    compile 'com.github.zcolin:ZBarcodeScanner:1.0.5'
+    compile 'com.github.zcolin:ZBarCodeScanner:1.0.5'
 }
 ```
 工程的build.gradle中添加
