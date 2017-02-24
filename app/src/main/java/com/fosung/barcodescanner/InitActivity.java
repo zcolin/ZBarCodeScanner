@@ -37,8 +37,8 @@ public class InitActivity extends AppCompatActivity {
 
     private void startMain() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN // Permission was added in API Level 16
-                && ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED
-                && ActivityCompat.checkSelfPermission(this, Manifest.permission.VIBRATE) != PackageManager.PERMISSION_GRANTED) {
+                && (ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED
+                || ActivityCompat.checkSelfPermission(this, Manifest.permission.VIBRATE) != PackageManager.PERMISSION_GRANTED)) {
             requestPermission(new String[]{Manifest.permission.CAMERA, Manifest.permission.VIBRATE},
                     REQUEST_STORAGE_READ_ACCESS_PERMISSION);
         } else {

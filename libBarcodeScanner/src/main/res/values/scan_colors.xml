@@ -2,18 +2,7 @@
 <resources>
 
     <color name="scan_contents_text">#ff000000</color>
-    <color name="scan_encode_view">#ffffffff</color>
-    <color name="scan_possible_result_points">#c0ffbd21</color> <!-- Android standard ICS color -->
-    <color name="scan_result_minor_text">#ffc0c0c0</color>
-    <color name="scan_result_points">#c099cc00</color> <!-- Android standard ICS color -->
-    <color name="scan_result_text">#ffffffff</color>
+    <color name="scan_possible_result_points">#c0ffbd21</color> 
     <color name="scan_result_view">#b0000000</color>
-    <color name="scan_status_text">#ffffffff</color>
-    <color name="scan_transparent">#00000000</color>
-    <color name="scan_viewfinder_laser">#ffcc0000</color> <!-- Android standard ICS color -->
-    <color name="scan_viewfinder_mask">#00000000</color>
-    <color name="scan_capture_text_cover_bg">#99535353</color>
-    <color name="scan_capture_text_cover_bottom_bg">#e5e5e5</color>
-    <color name="scan_seek_bar_text">#fff6f6f6</color>
 
 </resources>
