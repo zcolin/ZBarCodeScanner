@@ -19,7 +19,7 @@ public class BitmapEncode {
 
      */
     public static Bitmap encode(String content, int width, int height) {
-        return encode(content, width, height, -1);
+        return encode(content, width, height, 0);
     }
 
     /**
@@ -37,7 +37,7 @@ public class BitmapEncode {
             hst.put(EncodeHintType.CHARACTER_SET, "UTF-8");
             BitMatrix matrix = writer.encode(content, BarcodeFormat.QR_CODE, width, height, hst);
             int[] pixels = new int[width * height];
-            color = color >= 0 ? color : 0xff000000;
+            color = color != 0 ? color : 0xff000000;
             for (int y = 0; y < height; y++) {
                 for (int x = 0; x < width; x++) {
                     if (matrix.get(x, y)) {
@@ -60,7 +60,7 @@ public class BitmapEncode {
      * 带有logo的二维码图片
      */
     public static Bitmap encodeWithPic(Context context, int drawable, String content, int width, int height) {
-        return encodeWithPic(context, drawable, content, width, height, -1);
+        return encodeWithPic(context, drawable, content, width, height, 0);
     }
 
     public static Bitmap encodeWithPic(Context context, int drawable, String content, int width, int height, int color) {
@@ -70,7 +70,7 @@ public class BitmapEncode {
 
 
     public static Bitmap encodeWithPic(Bitmap bitmapPic, String content, int width, int height) {
-        return encodeWithPic(bitmapPic, content, width, height, -1);
+        return encodeWithPic(bitmapPic, content, width, height, 0);
     }
 
     /**
