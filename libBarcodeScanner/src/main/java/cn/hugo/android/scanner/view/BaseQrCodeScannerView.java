@@ -127,8 +127,7 @@ public class BaseQrCodeScannerView extends RelativeLayout implements SurfaceHold
     public void onCreate() {
         Window window = activity.getWindow();
         window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-        LayoutInflater.from(activity)
-                      .inflate(R.layout.scan_qrcodescan, this);
+        LayoutInflater.from(activity).inflate(R.layout.scan_qrcodescan, this);
         hasSurface = false;
         inactivityTimer = new InactivityTimer(activity);
         ambientLightManager = new AmbientLightManager(activity);
@@ -149,14 +148,14 @@ public class BaseQrCodeScannerView extends RelativeLayout implements SurfaceHold
         // 不建议放到onCreate中，因为如果在onCreate中加上首次启动展示帮助信息的代码的 话，
         // 会导致扫描窗口的尺寸计算有误的bug
         cameraManager = new CameraManager(activity);
-        viewfinderView = (ViewfinderView) findViewById(R.id.actyscan_viewfinder_view);
+        viewfinderView = findViewById(R.id.actyscan_viewfinder_view);
         viewfinderView.setCameraManager(cameraManager);
         handler = null;
         lastResult = null;
         // 摄像头预览功能必须借助SurfaceView，因此也需要在一开始对其进行初始化
         // 如果需要了解SurfaceView的原理
         // 参考:http://blog.csdn.net/luoshengyang/article/details/8661317
-        SurfaceView surfaceView = (SurfaceView) findViewById(R.id.actyscan_preview_view); // 预览
+        SurfaceView surfaceView = findViewById(R.id.actyscan_preview_view); // 预览
         SurfaceHolder surfaceHolder = surfaceView.getHolder();
         if (hasSurface) {
             // The activity was paused but not stopped, so the surface still
@@ -192,7 +191,7 @@ public class BaseQrCodeScannerView extends RelativeLayout implements SurfaceHold
         // 关闭摄像头
         cameraManager.closeDriver();
         if (!hasSurface) {
-            SurfaceView surfaceView = (SurfaceView) findViewById(R.id.actyscan_preview_view);
+            SurfaceView surfaceView = findViewById(R.id.actyscan_preview_view);
             SurfaceHolder surfaceHolder = surfaceView.getHolder();
             surfaceHolder.removeCallback(this);
         }
@@ -289,8 +288,7 @@ public class BaseQrCodeScannerView extends RelativeLayout implements SurfaceHold
         //震动
         Vibrator vibrator = (Vibrator) activity.getSystemService(Context.VIBRATOR_SERVICE);
         vibrator.vibrate(200);
-        scanSuccess(ResultParser.parseResult(rawResult)
-                                .toString());
+        scanSuccess(ResultParser.parseResult(rawResult).toString());
     }
 
     public void restartPreviewAfterDelay(long delayMS) {
@@ -381,15 +379,13 @@ public class BaseQrCodeScannerView extends RelativeLayout implements SurfaceHold
         if (TextUtils.isEmpty(result)) {
             // 重新进行扫描
             restartPreviewAfterDelay(0L);
-            Toast.makeText(activity, "扫描结果为空，请重新扫描！", Toast.LENGTH_SHORT)
-                 .show();
+            Toast.makeText(activity, "扫描结果为空，请重新扫描！", Toast.LENGTH_SHORT).show();
         } else {
             //String resultStr = ResultParser.parseResult(rawResult).toString();
             if (onScanResultListener != null && !onScanResultListener.scanResult(result)) {
                 // 重新进行扫描
                 restartPreviewAfterDelay(0L);
-                Toast.makeText(activity, "二维码数据错误，请重新扫描！", Toast.LENGTH_SHORT)
-                     .show();
+                Toast.makeText(activity, "二维码数据错误，请重新扫描！", Toast.LENGTH_SHORT).show();
             }
         }
     }

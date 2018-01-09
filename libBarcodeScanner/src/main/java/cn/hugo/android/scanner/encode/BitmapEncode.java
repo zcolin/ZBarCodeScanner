@@ -32,7 +32,7 @@ public class BitmapEncode {
         Bitmap bitmap = null;
         try {
             MultiFormatWriter writer = new MultiFormatWriter();
-            Hashtable<EncodeHintType, Object> hst = new Hashtable<EncodeHintType, Object>();
+            Hashtable<EncodeHintType, Object> hst = new Hashtable<>();
             hst.put(EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.H);
             hst.put(EncodeHintType.CHARACTER_SET, "UTF-8");
             BitMatrix matrix = writer.encode(content, BarcodeFormat.QR_CODE, width, height, hst);

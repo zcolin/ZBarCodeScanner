@@ -16,15 +16,11 @@ public class QrCodeScanActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        view = (BaseQrCodeScannerView) findViewById(R.id.scan_view);
+        view = findViewById(R.id.scan_view);
         view.onCreate();
-        view.setOnScanResultListener(new BaseQrCodeScannerView.OnScanResultListener() {
-            @Override
-            public boolean scanResult(String result) {
-                Toast.makeText(QrCodeScanActivity.this, result, Toast.LENGTH_LONG)
-                     .show();
-                return false;//true则结束页面，false则不结束
-            }
+        view.setOnScanResultListener(result -> {
+            Toast.makeText(QrCodeScanActivity.this, result, Toast.LENGTH_LONG).show();
+            return false;//true则结束页面，false则不结束
         });
     }
 

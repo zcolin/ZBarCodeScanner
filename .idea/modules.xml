@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ZBarCodeScanner.iml" filepath="$PROJECT_DIR$/ZBarCodeScanner.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/ZBarCodeScanner.iml" filepath="$PROJECT_DIR$/.idea/ZBarCodeScanner.iml" />
+      <module fileurl="file://E:\workspace_as\zcolin_lib\ZBarCodeScanner\ZBarCodeScanner.iml" filepath="E:\workspace_as\zcolin_lib\ZBarCodeScanner\ZBarCodeScanner.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://E:\workspace_as\zcolin_lib\ZBarCodeScanner\app\app.iml" filepath="E:\workspace_as\zcolin_lib\ZBarCodeScanner\app\app.iml" />
       <module fileurl="file://$PROJECT_DIR$/libBarcodeScanner/libBarcodeScanner.iml" filepath="$PROJECT_DIR$/libBarcodeScanner/libBarcodeScanner.iml" />
+      <module fileurl="file://E:\workspace_as\zcolin_lib\ZBarCodeScanner\libBarcodeScanner\libBarcodeScanner.iml" filepath="E:\workspace_as\zcolin_lib\ZBarCodeScanner\libBarcodeScanner\libBarcodeScanner.iml" />
     </modules>
   </component>
 </project>

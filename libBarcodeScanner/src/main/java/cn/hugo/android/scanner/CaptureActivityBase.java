@@ -9,19 +9,18 @@ import com.google.zxing.Result;
 import cn.hugo.android.scanner.camera.CameraManager;
 import cn.hugo.android.scanner.view.ViewfinderView;
 
-public interface CaptureActivityBase
-{
-	public abstract void handleDecode(Result rawResult, Bitmap barcode, float scaleFactor);
+public interface CaptureActivityBase {
+    void handleDecode(Result rawResult, Bitmap barcode, float scaleFactor);
 
-	public abstract void restartPreviewAfterDelay(long delayMS);
+    void restartPreviewAfterDelay(long delayMS);
 
-	public abstract ViewfinderView getViewfinderView();
+    ViewfinderView getViewfinderView();
 
-	public abstract Handler getHandler();
+    Handler getHandler();
 
-	public abstract CameraManager getCameraManager();
+    CameraManager getCameraManager();
 
-	public abstract void drawViewfinder();
-	
-	public abstract Activity getActivityContext();
+    void drawViewfinder();
+
+    Activity getActivityContext();
 }

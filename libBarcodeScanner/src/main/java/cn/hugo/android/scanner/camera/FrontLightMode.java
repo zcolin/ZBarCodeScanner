@@ -17,6 +17,7 @@
 package cn.hugo.android.scanner.camera;
 
 import android.content.SharedPreferences;
+
 import cn.hugo.android.scanner.config.Config;
 
 /**
@@ -24,20 +25,25 @@ import cn.hugo.android.scanner.config.Config;
  */
 public enum FrontLightMode {
 
-	/** Always on. */
-	ON,
-	/** On only when ambient light is low. */
-	AUTO,
-	/** Always off. */
-	OFF;
+    /**
+     * Always on.
+     */
+    ON,
+    /**
+     * On only when ambient light is low.
+     */
+    AUTO,
+    /**
+     * Always off.
+     */
+    OFF;
 
-	private static FrontLightMode parse(String modeString) {
-		return modeString == null ? OFF : valueOf(modeString);
-	}
+    private static FrontLightMode parse(String modeString) {
+        return modeString == null ? OFF : valueOf(modeString);
+    }
 
-	public static FrontLightMode readPref(SharedPreferences sharedPrefs) {
-		return parse(sharedPrefs.getString(
-				Config.KEY_FRONT_LIGHT_MODE, null));
-	}
+    public static FrontLightMode readPref(SharedPreferences sharedPrefs) {
+        return parse(sharedPrefs.getString(Config.KEY_FRONT_LIGHT_MODE, null));
+    }
 
 }

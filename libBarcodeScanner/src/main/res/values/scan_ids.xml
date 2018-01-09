@@ -15,12 +15,12 @@
  limitations under the License.
  -->
 <resources>
-  <!-- Messages IDs -->
-  <item type="id" name="scan_decode"/>
-  <item type="id" name="scan_decode_failed"/>
-  <item type="id" name="scan_decode_succeeded"/>
-  <item type="id" name="scan_launch_product_query"/>
-  <item type="id" name="scan_quit"/>
-  <item type="id" name="scan_restart_preview"/>
-  <item type="id" name="scan_return_scan_result"/>
+    <!-- Messages IDs -->
+    <item type="id" name="scan_decode"/>
+    <item type="id" name="scan_decode_failed"/>
+    <item type="id" name="scan_decode_succeeded"/>
+    <item type="id" name="scan_launch_product_query"/>
+    <item type="id" name="scan_quit"/>
+    <item type="id" name="scan_restart_preview"/>
+    <item type="id" name="scan_return_scan_result"/>
 </resources>
