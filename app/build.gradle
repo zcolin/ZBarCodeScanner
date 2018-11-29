@@ -23,7 +23,7 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile "com.android.support:appcompat-v7:$supprotVersion"
-    compile project(':libBarcodeScanner')
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "com.android.support:appcompat-v7:$supprotVersion"
+    implementation project(':libBarcodeScanner')
 }
